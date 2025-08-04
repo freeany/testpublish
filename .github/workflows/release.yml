@@ -4,6 +4,13 @@ on:
   push:
     tags:
       - 'v*'
+    branches:
+      - master
+
+permissions:
+  contents: write
+  packages: write
+  actions: read
 
 jobs:
   release:
@@ -28,6 +35,13 @@ jobs:
 
       - name: Build Electron app
         run: npm run make
+
+      - name: Debug GitHub context
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          echo "GitHub ref: ${{ github.ref }}"
+          echo "GitHub repository: ${{ github.repository }}"
+          echo "GitHub actor: ${{ github.actor }}"
 
       - name: Publish to GitHub Releases
         if: startsWith(github.ref, 'refs/tags/v')
