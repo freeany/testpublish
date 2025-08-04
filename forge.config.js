@@ -4,15 +4,31 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: './assets/icon', // Electron Forge will automatically choose the correct format
   },
   rebuildConfig: {},
   makers: [
+    // Windows makers
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: '111'
+        name: '111',
+        setupExe: '111-setup.exe'
       },
       platforms: ['win32']
+    },
+    {
+      name: '@electron-forge/maker-zip',
+      platforms: ['win32'],
+    },
+    // macOS makers
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        name: '111',
+        title: '111 Installer'
+      },
+      platforms: ['darwin']
     },
     {
       name: '@electron-forge/maker-zip',
@@ -24,9 +40,9 @@ module.exports = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
-          owner: 'your-github-username',
-          name: 'your-repo-name'
-        },
+           owner: 'freeany',
+           name: 'testpublish'
+         },
         prerelease: false
       }
     }

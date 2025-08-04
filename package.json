@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "generate-icons": "node scripts/generate-icons.js"
   },
   "keywords": [],
   "author": {
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^7.8.2",
     "@electron-forge/maker-deb": "^7.8.2",
+    "@electron-forge/maker-dmg": "^7.8.2",
     "@electron-forge/maker-rpm": "^7.8.2",
     "@electron-forge/maker-squirrel": "^7.8.2",
     "@electron-forge/maker-zip": "^7.8.2",
@@ -30,6 +32,7 @@
     "@electron-forge/plugin-fuses": "^7.8.2",
     "@electron-forge/publisher-github": "^7.8.2",
     "@electron/fuses": "^2.0.0",
-    "electron": "37.2.5"
+    "electron": "37.2.5",
+    "icon-gen": "^5.0.0"
   }
 }

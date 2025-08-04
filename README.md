@@ -14,6 +14,11 @@ npm install
 npm start
 ```
 
+### 生成图标
+```bash
+npm run generate-icons
+```
+
 ### 构建应用
 ```bash
 npm run make
@@ -38,10 +43,27 @@ npm run publish
    ```
 3. GitHub Actions 会自动构建 macOS 和 Windows 版本并发布到 Releases
 
-## 支持的平台
+## 支持的平台和打包格式
 
-- macOS (ZIP 格式)
-- Windows (Squirrel 安装包)
+### Windows 系统
+- **ZIP 包**：便携版应用，解压即用
+- **Squirrel 安装包**：`111-setup.exe` - 带安装向导的安装程序
+- **NuGet 包**：`111-1.0.0-full.nupkg` - 完整应用包
+
+### macOS 系统
+- **ZIP 包**：包含 `.app` 应用程序的压缩包
+- **DMG 包**：`111 Installer.dmg` - 标准的 macOS 安装镜像文件
+
+所有包都包含相应平台的图标文件（Windows: .ico, macOS: .icns）
+
+## 图标配置
+
+项目包含完整的图标配置：
+- `assets/icon.svg` - 源图标文件
+- `assets/icon.ico` - Windows 图标
+- `assets/icon.icns` - macOS 图标
+
+如需更换图标，请替换 `assets/icon.svg` 文件，然后运行 `npm run generate-icons` 重新生成图标。
 
 ## 配置说明
 
