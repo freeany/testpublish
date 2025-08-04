@@ -43,7 +43,7 @@ module.exports = {
            owner: 'freeany',
            name: 'testpublish'
          },
-        prerelease: false
+         draft: true, // 始终发布为草稿，需要手动确认
       }
     }
   ],
