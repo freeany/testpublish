@@ -13,7 +13,11 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         name: '111',
-        setupExe: '111-setup.exe'
+        setupExe: '111-setup.exe',
+        setupIcon: './assets/icon.ico',
+        authors: 'lhr',
+        description: 'My Electron application description',
+        noMsi: true
       },
       platforms: ['win32']
     },
